@@ -1,3 +1,4 @@
 .idea
 target
 .mvn
+./src/main/resources/application.properties
