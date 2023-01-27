@@ -12,7 +12,7 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @RequestMapping(value = "/sign-in")
+    @PostMapping(value = "/sign-in")
     public Map<String, Object> loginAccount(@RequestBody User user){
         return userService.loginAccount(user);
     }
