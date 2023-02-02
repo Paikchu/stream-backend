@@ -10,6 +10,6 @@ import java.util.List;
 @Mapper
 public interface GameMapper {
     @Select("SELECT g_name FROM game")
-    List<Game> selectAllGameNames();
+    List<String> selectAllGameNames();
 
 }

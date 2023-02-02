@@ -6,12 +6,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
 public class GameController {
     @Resource
     private GameService gameService;
 
     @GetMapping ("/home")
-    public List<Game> showHomepage(){
+    public List<String> showHomepage(){
         System.out.println("get all game name, proceeding...\n");
         return gameService.getAllGame();
     }

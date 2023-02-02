@@ -63,5 +63,8 @@ public class UserService {
         return resultMap;
     }
 
-
+    public List<String> getAllUserName(){
+        List<String> usernames = userMapper.getAllUserName();
+        return usernames;
+    }
 }

@@ -5,6 +5,7 @@ import com.db.stream.service.UserService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -21,5 +22,8 @@ public class UserController {
     public Map<String, Object> createAccount(@RequestBody User user){
         return userService.createAccount(user);
     }
+
+    @GetMapping("/getall")
+    public List<String> getAllUser() {return userService.getAllUserName();}
 
 }

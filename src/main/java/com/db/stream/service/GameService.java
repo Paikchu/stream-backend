@@ -15,7 +15,7 @@ public class GameService {
     @Resource
     private GameMapper gameMapper;
 
-    public List<Game> getAllGame() {
+    public List<String> getAllGame() {
         return gameMapper.selectAllGameNames();
 
     }
