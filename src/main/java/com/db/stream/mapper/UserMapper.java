@@ -15,6 +15,9 @@ public interface UserMapper {
     @Select("SELECT u_name, u_email, u_pwd, u_permission FROM User WHERE u_email = #{email}")
     List<User> selectUserByEmail(@Param("email") String email);
 
+    @Select("SELECT u_name FROM User")
+    List<String> getAllUserName();
+
     @Insert("INSERT INTO User(u_name, u_email, u_pwd)" + "VALUE(#{u_name}, #{u_email}, #{u_pwd})")
     Integer createUserAccount(User user);
 

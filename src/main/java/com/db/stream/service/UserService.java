@@ -107,7 +107,6 @@ public class UserService {
             }
         }
     }
-
     /**
      * Manager login
      *
@@ -144,5 +143,4 @@ public class UserService {
             }
         }
     }
-
 }
