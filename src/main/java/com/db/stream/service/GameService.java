@@ -15,7 +15,11 @@ public class GameService {
     @Resource
     private GameMapper gameMapper;
 
+<<<<<<< Updated upstream
     public List<String> getAllGame() {
+=======
+    public List<Game> getAllGame() {
+>>>>>>> Stashed changes
         return gameMapper.selectAllGameNames();
 
     }

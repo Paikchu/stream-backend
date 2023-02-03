@@ -10,6 +10,10 @@ import java.util.List;
 @Mapper
 public interface GameMapper {
     @Select("SELECT g_name FROM game")
+<<<<<<< Updated upstream
     List<String> selectAllGameNames();
+=======
+    List<Game> selectAllGameNames();
+>>>>>>> Stashed changes
 
 }
