@@ -9,11 +9,8 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 @Mapper
 public interface GameMapper {
-    @Select("SELECT g_name FROM game")
-<<<<<<< Updated upstream
+    @Select("SELECT g_name, g_id, g_tag, g_intro FROM game")
+
     List<String> selectAllGameNames();
-=======
-    List<Game> selectAllGameNames();
->>>>>>> Stashed changes
 
 }

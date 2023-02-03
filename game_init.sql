@@ -1,3 +1,13 @@
+INSERT INTO Company VALUES (1, 'Rockstar Games', 'r123@gmail.com', '123456', 1);
+INSERT INTO Company VALUES (2, 'Ubisoft', 'u123@gmail.com', '123456', 1);
+INSERT INTO Company VALUES (3, 'Paradox Interactive', 'p123@gmail.com', '123456', 1);
+INSERT INTO Company VALUES (4, 'Activision', 'a123@gmail.com', '123456', 1);
+INSERT INTO Company VALUES (5, 'CD PROJECT RED', 'c123@gmail.com', '123456', 1);
+INSERT INTO Company VALUES (6, 'Respawn Entertainment','re123@gmail.com', '123456', 1);
+INSERT INTO Company VALUES (7, 'ATLUS', 'a2@gmail.com', '123456', 1);
+INSERT INTO Company VALUES (8, 'Catfood Studio', 'cat123@gmail.com', '123456', 1);
+INSERT INTO Company VALUES (9, 'FromSoftware', 'fs123@gmail.com', '123456', 1);
+INSERT INTO Company VALUES (10, 'Square Enix', 'se123@gmail.com', '123456', 1);
 INSERT INTO Game VALUES (1, "GrandTheftAuto", "Grand Theft Auto V for PC offers players the option to explore the award-winning world of Los Santos and Blaine County in resolutions of up to 4k and beyond, as well as the chance to experience the game running at 60 frames per second.", str_to_date("2013-04-14", "%Y-%m-%d"), 29.99, 'AVG', 1, 120000000, 3600000000, 10.0);
 INSERT INTO Game VALUES (2, "FINAL FANTASY VII", "Cloud Strife, an ex-SOLDIER operative, descends on the mako-powered city of Midgar. The world of the timeless classic FINAL FANTASY VII is reborn, using cutting-edge graphics technology, a new battle system and an additional adventure featuring Yuffie Kisaragi.", str_to_date("2022-06-17", "%Y-%m-%d"), 59.99, 'ARPG', 10, 0, 0, 10.0);
 INSERT INTO Game VALUES (3, "Assassin's Creed Odyssey", "Choose your fate in Assassin's Creed Odyssey. From outcast to living legend, embark on an odyssey to uncover the secrets of your past and change the fate of Ancient Greece.", str_to_date("2018-10-05", "%Y-%m-%d"), 29.99, 'ARPG', 2, 0, 0, 8.0);
