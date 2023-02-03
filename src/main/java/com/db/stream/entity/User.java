@@ -10,6 +10,8 @@ public class User implements Serializable {
     private String u_pwd;
     private Integer u_permission;
 
+
+
     public Integer getU_permission() {
         return u_permission;
     }
