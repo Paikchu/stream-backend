@@ -1,0 +1,10 @@
+INSERT INTO Company VALUES (1, 'Rockstar Games');
+INSERT INTO Company VALUES (2, 'Ubisoft');
+INSERT INTO Company VALUES (3, 'Paradox Interactive');
+INSERT INTO Company VALUES (4, 'Activision');
+INSERT INTO Company VALUES (5, 'CD PROJECT RED');
+INSERT INTO Company VALUES (6, 'Respawn Entertainment');
+INSERT INTO Company VALUES (7, 'ATLUS');
+INSERT INTO Company VALUES (8, 'Catfood Studio');
+INSERT INTO Company VALUES (9, 'FromSoftware');
+INSERT INTO Company VALUES (10, 'Square Enix');
