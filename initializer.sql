@@ -1,5 +1,5 @@
-# CREATE DATABASE stream;
-# USE stream;
+CREATE DATABASE stream;
+USE stream;
 
 DROP TABLE IF EXISTS `Cart`;
 DROP TABLE IF EXISTS `Manager`;
@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS `Company`;
 DROP TABLE IF EXISTS `User`;
 
 
-# DROP TABLE IF EXISTS `Company`;
+DROP TABLE IF EXISTS `Company`;
 CREATE TABLE Company
 (
     com_id         INT primary key AUTO_INCREMENT,
@@ -22,7 +22,7 @@ CREATE TABLE Company
 );
 
 
-# DROP TABLE IF EXISTS `User`;
+DROP TABLE IF EXISTS `User`;
 CREATE TABLE User
 (
     u_id         INT primary key AUTO_INCREMENT,
@@ -33,7 +33,7 @@ CREATE TABLE User
 );
 
 
-# DROP TABLE IF EXISTS `Manager`;
+DROP TABLE IF EXISTS `Manager`;
 CREATE TABLE Manager
 (
     m_id    INT primary key AUTO_INCREMENT,
@@ -42,7 +42,7 @@ CREATE TABLE Manager
     m_pwd   VARCHAR(50) NOT NULL
 );
 
-# DROP TABLE IF EXISTS `Game`;
+DROP TABLE IF EXISTS `Game`;
 CREATE TABLE Game
 (
     g_id           INT primary key AUTO_INCREMENT,
@@ -58,7 +58,7 @@ CREATE TABLE Game
     FOREIGN KEY (com_id) REFERENCES Company (com_id)
 );
 
-# DROP TABLE IF EXISTS `Cart`;
+DROP TABLE IF EXISTS `Cart`;
 CREATE TABLE Cart
 (
     c_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -68,7 +68,7 @@ CREATE TABLE Cart
     FOREIGN KEY (g_id) REFERENCES Game (g_id)
 );
 
-# DROP TABLE IF EXISTS `Comment`;
+DROP TABLE IF EXISTS `Comment`;
 CREATE TABLE Comment
 (
     comm_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -80,7 +80,7 @@ CREATE TABLE Comment
     FOREIGN KEY (u_id) REFERENCES User (u_id)
 );
 
-# DROP TABLE IF EXISTS `Library`;
+DROP TABLE IF EXISTS `Library`;
 CREATE TABLE Library
 (
     l_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -90,7 +90,7 @@ CREATE TABLE Library
     FOREIGN KEY (g_id) REFERENCES Game (g_id)
 );
 
-# DROP TABLE IF EXISTS `Transaction`;
+DROP TABLE IF EXISTS `Transaction`;
 CREATE TABLE Transaction
 (
     t_id    INT primary key AUTO_INCREMENT,
