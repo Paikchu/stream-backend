@@ -46,7 +46,4 @@ public class UserController {
         return userService.createManagerAccount(manager);
     }
 
-    @GetMapping("/getall")
-    public List<String> getAllUser() {return userService.getAllUserName();}
-
 }
