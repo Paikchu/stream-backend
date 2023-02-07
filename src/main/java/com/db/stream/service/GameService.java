@@ -17,6 +17,12 @@ public class GameService {
 
     public List<String> getAllGame() {
         return gameMapper.selectAllGameNames();
-
     }
+
+
+    public List<Game> getUserGame(Integer u_id){
+        List<Game> list = gameMapper.selectUserGameByUserId(u_id);
+        return list;
+    }
+
 }
