@@ -3,4 +3,4 @@ target
 .mvn
 stream-backend.iml
 
-
+/src/main/resources/application.properties
