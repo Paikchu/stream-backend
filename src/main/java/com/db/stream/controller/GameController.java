@@ -18,10 +18,10 @@ public class GameController {
         return gameService.getAllGame();
     }
 
-
-    @GetMapping("/lib")
-    public List<Game> libGameList(@RequestParam Integer u_id){
-        return gameService.getUserGame(u_id);
-    }
+//
+//    @GetMapping("/lib")
+//    public List<Game> libGameList(@RequestParam Integer u_id){
+//        return gameService.getUserGame(u_id);
+//    }
 
 }
