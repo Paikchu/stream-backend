@@ -19,10 +19,9 @@ public class GameService {
         return gameMapper.selectAllGameNames();
     }
 
-
-    public List<Game> getUserGame(Integer u_id){
-        List<Game> list = gameMapper.selectUserGameByUserId(u_id);
-        return list;
-    }
+//    public List<Game> getUserGame(Integer u_id){
+//        List<Game> list = gameMapper.selectUserGameByUserId(u_id);
+//        return list;
+//    }
 
 }
