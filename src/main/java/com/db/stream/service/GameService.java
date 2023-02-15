@@ -38,10 +38,12 @@ public class GameService {
         List<Game> N = gameMapper.getGameNum();
         return N;
     }
-
-//    public List<Game> getUserGame(Integer u_id){
-//        List<Game> list = gameMapper.selectUserGameByUserId(u_id);
-//        return list;
-//    }
-
+    public Integer create_new_comm(Comment comment) {
+        Integer comm = gameMapper.create_new_comm(comment);
+        if (comm > 0) {
+            return 1;
+        } else {
+          return 0;
+        }
+    }
 }
