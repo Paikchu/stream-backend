@@ -1,6 +1,7 @@
 package com.db.stream.controller;
 import com.db.stream.entity.Game;
 import com.db.stream.entity.Comment;
+import com.db.stream.entity.GameCompany;
 import com.db.stream.service.GameService;
 import jakarta.annotation.Resource;
 import org.apache.ibatis.annotations.Param;
@@ -30,7 +31,7 @@ public class GameController {
     public Integer add_comm(@RequestBody Comment comment) { return gameService.create_new_comm(comment);}
 
     @RequestMapping("/numofgames")
-    public List<Game> numofgames() { return gameService.getGameNum();}
+    public List<Integer> numofgames() { return gameService.getGameNum();}
 
     @PostMapping("/search_game")
     public List<Game> searched_game(@RequestBody Map<String, String> requestBody){
@@ -43,4 +44,10 @@ public class GameController {
 //    public List<Game> libGameList(@RequestParam Integer u_id){
 //        return gameService.getUserGame(u_id);
 //    }
+
+
+    @GetMapping("/admin-table-game")
+    public List<GameCompany> allGame(){
+        return gameService.allGame();
+    }
 }
