@@ -1,61 +1,60 @@
 package com.db.stream.entity;
 
 public class Company {
+    private Integer c_id;
+    private String c_name;
+    private String c_email;
+    private String c_pd;
+    private Integer c_permission;
 
-    private Integer com_id;
-    private String com_name;
-    private String com_email;
-    private String com_pwd;
-    private Integer com_permission;
-
-    public Company(Integer com_id, String com_name, String com_email, String com_pwd, Integer com_permission) {
-        this.com_id = com_id;
-        this.com_name = com_name;
-        this.com_email = com_email;
-        this.com_pwd = com_pwd;
-        this.com_permission = com_permission;
+    public Company(Integer c_id, String c_name, String c_email, String c_pd, Integer c_permission) {
+        this.c_id = c_id;
+        this.c_name = c_name;
+        this.c_email = c_email;
+        this.c_pd = c_pd;
+        this.c_permission = c_permission;
     }
 
     public Company() {
     }
 
-    public Integer getCom_id() {
-        return com_id;
+    public Integer getC_id() {
+        return c_id;
     }
 
-    public void setCom_id(Integer com_id) {
-        this.com_id = com_id;
+    public void setC_id(Integer c_id) {
+        this.c_id = c_id;
     }
 
-    public String getCom_name() {
-        return com_name;
+    public String getC_name() {
+        return c_name;
     }
 
-    public void setCom_name(String com_name) {
-        this.com_name = com_name;
+    public void setC_name(String c_name) {
+        this.c_name = c_name;
     }
 
-    public String getCom_email() {
-        return com_email;
+    public String getC_email() {
+        return c_email;
     }
 
-    public void setCom_email(String com_email) {
-        this.com_email = com_email;
+    public void setC_email(String c_email) {
+        this.c_email = c_email;
     }
 
-    public String getCom_pwd() {
-        return com_pwd;
+    public String getC_pd() {
+        return c_pd;
     }
 
-    public void setCom_pwd(String com_pwd) {
-        this.com_pwd = com_pwd;
+    public void setC_pd(String c_pd) {
+        this.c_pd = c_pd;
     }
 
-    public Integer getCom_permission() {
-        return com_permission;
+    public Integer getC_permission() {
+        return c_permission;
     }
 
-    public void setCom_permission(Integer com_permission) {
-        this.com_permission = com_permission;
+    public void setC_permission(Integer c_permission) {
+        this.c_permission = c_permission;
     }
 }

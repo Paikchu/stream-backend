@@ -1,6 +1,7 @@
 package com.db.stream.controller;
 import com.db.stream.entity.Game;
 import com.db.stream.entity.Comment;
+import com.db.stream.entity.GameCompany;
 import com.db.stream.service.GameService;
 import jakarta.annotation.Resource;
 import org.springframework.data.repository.query.Param;
@@ -32,4 +33,10 @@ public class GameController {
 //    public List<Game> libGameList(@RequestParam Integer u_id){
 //        return gameService.getUserGame(u_id);
 //    }
+
+
+    @GetMapping("/admin-table-game")
+    public List<GameCompany> allGame(){
+        return gameService.allGame();
+    }
 }

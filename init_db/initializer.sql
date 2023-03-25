@@ -16,6 +16,7 @@ CREATE TABLE Company
 (
     c_id         INT primary key AUTO_INCREMENT,
     c_name       varchar(50) NOT NULL,
+    c_email         varchar(50) NOT NULL ,
     c_pd        varchar(50) NOT NULL,
     c_permission INT         NOT NULL DEFAULT 1
 );
@@ -51,9 +52,7 @@ CREATE TABLE Game
     g_price        DOUBLE      NOT NULL,
     g_tag          VARCHAR(20),
     g_cid         INT,
-    g_uid       INT,
-    FOREIGN KEY (g_cid) REFERENCES Company (c_id),
-    FOREIGN KEY (g_uid) REFERENCES User (u_id)
+    FOREIGN KEY (g_cid) REFERENCES Company (c_id)
 );
 
 DROP TABLE IF EXISTS `Cart`;

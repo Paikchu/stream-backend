@@ -2,6 +2,7 @@ package com.db.stream.service;
 
 import com.db.stream.entity.Game;
 import com.db.stream.entity.Comment;
+import com.db.stream.entity.GameCompany;
 import com.db.stream.mapper.GameMapper;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -43,4 +44,8 @@ public class GameService {
 //        return list;
 //    }
 
+    public List<GameCompany> allGame()
+    {
+        return gameMapper.allGame();
+    }
 }
