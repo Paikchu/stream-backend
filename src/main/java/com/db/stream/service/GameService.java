@@ -44,8 +44,4 @@ public class GameService {
 //        return list;
 //    }
 
-    public List<GameCompany> allGame()
-    {
-        return gameMapper.allGame();
-    }
 }

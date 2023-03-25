@@ -46,14 +46,5 @@ public class UserController {
         return userService.createManagerAccount(manager);
     }
 
-    @GetMapping(value = "/admin-table-c")
-    public List<Company> allCompanies(){
-        return userService.allCompanies();
-    }
-
-    @GetMapping(value = "/admin-table-user")
-    public List<User> allUser(){
-        return userService.allUser();
-    }
 
 }

@@ -44,7 +44,7 @@ public class Game implements Serializable {
         this.g_release_date = g_release_date;
     }
 
-    public double getG_price() {
+    public Double getG_price() {
         return g_price;
     }
 
