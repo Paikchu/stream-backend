@@ -19,17 +19,22 @@ public interface UserMapper {
     Integer createUserAccount(User user);
 
 
-    @Select("SELECT com_name, com_email, com_pwd, com_permission FROM Company WHERE com_email = #{email}")
+    @Select("SELECT c_name, c_email, c_pd, c_permission FROM Company WHERE c_email = #{email}")
     List<Company> selectComByEmail(@Param("email") String email);
 
 
-    @Insert("INSERT INTO Company(com_name, com_email, com_pwd)" + "VALUE(#{com_name}, #{com_email}, #{com_pwd})")
+    @Insert("INSERT INTO Company(c_name, c_email, c_pd)" + "VALUE(#{c_name}, #{c_email}, #{c_pd})")
     Integer createComAccount(Company company);
 
 
     @Select("SELECT m_name, m_email, m_pwd FROM Manager WHERE m_email = #{email}")
     List<Manager> selectManagerByEmail(@Param("email") String email);
 
+    @Select("SELECT c_id, c_name, c_email, c_permission FROM Company")
+    List<Company> selectAllCom();
+
+    @Select("SELECT u_id, u_name, u_email, u_permission FROM User")
+    List<User> selectAllUser();
 
     @Insert("INSERT INTO Manager(m_name, m_email, m_pwd)" + "VALUE(#{m_name}, #{m_email}, #{m_pwd})")
     Integer createManagerAccount(Manager manager);

@@ -7,7 +7,7 @@ public class User implements Serializable {
     private Integer u_id;
     private String u_name;
     private String u_email;
-    private String u_pwd;
+    private String u_pd;
     private Integer u_permission;
 
 
@@ -20,11 +20,11 @@ public class User implements Serializable {
         this.u_permission = u_permission;
     }
 
-    public User(Integer u_id, String u_name, String u_email, String u_pwd, Integer u_permission) {
+    public User(Integer u_id, String u_name, String u_email, String u_pd, Integer u_permission) {
         this.u_id = u_id;
         this.u_name = u_name;
         this.u_email = u_email;
-        this.u_pwd = u_pwd;
+        this.u_pd = u_pd;
         this.u_permission = u_permission;
     }
     public User(){
@@ -54,11 +54,11 @@ public class User implements Serializable {
         this.u_email = u_email;
     }
 
-    public String getU_pwd() {
-        return u_pwd;
+    public String getU_pd() {
+        return u_pd;
     }
 
-    public void setU_pwd(String u_pwd) {
-        this.u_pwd = u_pwd;
+    public void setU_pd(String u_pd) {
+        this.u_pd = u_pd;
     }
 }
