@@ -31,13 +31,14 @@ public class GameController {
     public Integer add_comm(@RequestBody Comment comment) { return gameService.create_new_comm(comment);}
 
     @RequestMapping("/numofgames")
-    public List<Integer> numofgames() { return gameService.getGameNum();}
+    public List<Game> numofgames() { return gameService.getGameNum();}
 
     @PostMapping("/search_game")
     public List<Game> searched_game(@RequestBody Map<String, String> requestBody){
         String game_name = requestBody.get("gamename");
         return gameService.searchgame(game_name);
     }
+
 
 //
 //    @GetMapping("/lib")
@@ -46,8 +47,8 @@ public class GameController {
 //    }
 
 
-    @GetMapping("/admin-table-game")
-    public List<GameCompany> allGame(){
-        return gameService.allGame();
-    }
+   // @GetMapping("/admin-table-game")
+    //public List<GameCompany> allGame(){
+       // return gameService.allGame();
+    //}
 }
