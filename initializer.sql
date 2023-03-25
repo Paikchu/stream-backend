@@ -103,5 +103,18 @@ CREATE TABLE Transaction
     FOREIGN KEY (u_id) REFERENCES User (u_id)
 );
 
+CREATE TABLE Game_Description
+(
+    g_id INT primary key AUTO_INCREMENT,
+    g_OS varchar(50) NOT NULL,
+    g_Processor varchar(50) NOT NULL,
+    g_RAM varchar(50) NOT NULL,
+    g_Memory varchar(50) NOT NULL,
+    g_Network varchar(50) NOT NULL,
+    g_GraphicCard varchar(50) NOT NULL,
+    g_ExtraRequire varchar(50),
+    FOREIGN KEY (g_id) REFERENCES Game (g_id)
+)
+
 
 

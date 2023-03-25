@@ -46,4 +46,8 @@ public class GameService {
           return 0;
         }
     }
+
+    public List<Game> searchgame(String gamename){
+        return gameMapper.searchgame(gamename);
+    }
 }

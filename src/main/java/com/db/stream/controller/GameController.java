@@ -5,8 +5,10 @@ import com.db.stream.service.GameService;
 import jakarta.annotation.Resource;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 public class GameController {
@@ -29,6 +31,12 @@ public class GameController {
 
     @RequestMapping("/numofgames")
     public List<Game> numofgames() { return gameService.getGameNum();}
+
+    @PostMapping("/search_game")
+    public List<Game> searched_game(@RequestBody Map<String, String> requestBody){
+        String game_name = requestBody.get("gamename");
+        return gameService.searchgame(game_name);
+    }
 
 //
 //    @GetMapping("/lib")
