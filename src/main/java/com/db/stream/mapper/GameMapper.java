@@ -2,12 +2,10 @@ package com.db.stream.mapper;
 
 import com.db.stream.entity.Game;
 import com.db.stream.entity.Comment;
-import com.db.stream.entity.GameCompany;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.data.util.Pair;
 
 import java.util.List;
 
@@ -25,8 +23,15 @@ public interface GameMapper {
         //List<Game> getGameInfo();
     List<Comment> getGameComm(@Param("game_id") Integer game_id);
 
-    @Select("SELECT g_id FROM Game")
-    List<Integer> getGameNum();
+    @Select("SELECT * FROM Game")
+    List<Game> getGameNum();
+
+    @Insert("INSERT INTO Comment(g_id,u_id,comm_content,comm_rate)" + "VALUE(#{g_id},#{u_id},#{comm_content},#{comm_rate})")
+    Integer create_new_comm(Comment comment);
+
+
+    @Select("SELECT * FROM Game WHERE g_name = #{g_name}")
+    List<Game> searchgame(@Param("g_name") String g_name);
 
 
 

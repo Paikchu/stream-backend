@@ -2,7 +2,6 @@ package com.db.stream.service;
 
 import com.db.stream.entity.Game;
 import com.db.stream.entity.Comment;
-import com.db.stream.entity.GameCompany;
 import com.db.stream.mapper.GameMapper;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -35,13 +34,27 @@ public class GameService {
         return commList;
     }
 
-    public List<Integer> getGameNum() {
-        return gameMapper.getGameNum();
+    public List<Game> getGameNum() {
+        List<Game> N = gameMapper.getGameNum();
+        return N;
     }
+    public Integer create_new_comm(Comment comment) {
+        Integer comm = gameMapper.create_new_comm(comment);
+        if (comm > 0) {
+            return 1;
+        } else {
+          return 0;
+        }
+    }
+
 
 //    public List<Game> getUserGame(Integer u_id){
 //        List<Game> list = gameMapper.selectUserGameByUserId(u_id);
 //        return list;
 //    }
+
+    public List<Game> searchgame(String gamename){
+        return gameMapper.searchgame(gamename);
+    }
 
 }
