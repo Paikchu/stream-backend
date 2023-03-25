@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.data.util.Pair;
 
 import java.util.List;
 
@@ -23,8 +24,8 @@ public interface GameMapper {
         //List<Game> getGameInfo();
     List<Comment> getGameComm(@Param("game_id") Integer game_id);
 
-    @Select("SELECT * FROM Game")
-    List<Game> getGameNum();
+    @Select("SELECT g_id FROM Game")
+    List<Integer> getGameNum();
 
 //    @Select("SELECT g.g_id, g.g_name FROM Game as g JOIN Library as L on g.g_id = L.g_id JOIN User U on U.u_id = L.u_id WHERE U.u_id == #{u_id}")
 //    List<Game> selectUserGameByUserId(@Param("u_id")Integer u_id);

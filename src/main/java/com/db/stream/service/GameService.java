@@ -34,9 +34,8 @@ public class GameService {
         return commList;
     }
 
-    public List<Game> getGameNum() {
-        List<Game> N = gameMapper.getGameNum();
-        return N;
+    public List<Integer> getGameNum() {
+        return gameMapper.getGameNum();
     }
 
 //    public List<Game> getUserGame(Integer u_id){

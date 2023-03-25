@@ -25,7 +25,7 @@ public class GameController {
     public List<Comment> comm_show(@PathVariable Integer game_id) { return gameService.getGameComm(game_id);}
 
     @RequestMapping("/numofgames")
-    public List<Game> numofgames() { return gameService.getGameNum();}
+    public List<Integer> numofgames() { return gameService.getGameNum();}
 
 //
 //    @GetMapping("/lib")
