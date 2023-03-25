@@ -47,8 +47,5 @@ public class GameController {
 //    }
 
 
-   // @GetMapping("/admin-table-game")
-    //public List<GameCompany> allGame(){
-       // return gameService.allGame();
-    //}
+
 }

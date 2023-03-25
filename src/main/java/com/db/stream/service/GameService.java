@@ -47,7 +47,14 @@ public class GameService {
         }
     }
 
+
+//    public List<Game> getUserGame(Integer u_id){
+//        List<Game> list = gameMapper.selectUserGameByUserId(u_id);
+//        return list;
+//    }
+
     public List<Game> searchgame(String gamename){
         return gameMapper.searchgame(gamename);
     }
+
 }
