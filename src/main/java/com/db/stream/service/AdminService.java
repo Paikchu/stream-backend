@@ -1,9 +1,6 @@
 package com.db.stream.service;
 
-import com.db.stream.entity.Company;
-import com.db.stream.entity.Game;
-import com.db.stream.entity.GameCompany;
-import com.db.stream.entity.User;
+import com.db.stream.entity.*;
 import com.db.stream.mapper.AdminMapper;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -61,5 +58,12 @@ public class AdminService {
         return adminMapper.allGame();
     }
 
+    public List<OrderUserGame> allOrder(){
+        return adminMapper.allOrder();
+    }
 
+    public List<User> modifyUserPermission(User user) {
+        adminMapper.modifyUserPermission(user.getU_id(), user.getU_permission() == 0 ? 1 : 0);
+        return adminMapper.selectAllUser();
+    }
 }

@@ -1,9 +1,6 @@
 package com.db.stream.controller;
 
-import com.db.stream.entity.Company;
-import com.db.stream.entity.GameCompany;
-import com.db.stream.entity.User;
-import com.db.stream.entity.Game;
+import com.db.stream.entity.*;
 import com.db.stream.service.AdminService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Controller;
@@ -35,6 +32,11 @@ public class AdminController {
         return adminService.modifyComPermission(company);
     }
 
+    @PostMapping("/admin-access-u")
+    public List<User> modifyUserPermission(@RequestBody User user) {
+        return adminService.modifyUserPermission(user);
+    }
+
     @PostMapping("/admin-c-change-name")
     public List<Company> modifyComName(@RequestBody Company company) {
         return adminService.modifyComName(company);
@@ -54,5 +56,10 @@ public class AdminController {
     @GetMapping("/admin-table-game")
     public List<GameCompany> allGame(){
         return adminService.allGame();
+    }
+
+    @GetMapping("/admin-table-order")
+    public List<OrderUserGame> allOrder(){
+        return adminService.allOrder();
     }
 }
