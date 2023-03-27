@@ -145,12 +145,6 @@ public class UserService {
     }
 
 
-    public List<Company> allCompanies(){
-        return userMapper.selectAllCom();
-    }
 
 
-    public List<User> allUser(){
-        return userMapper.selectAllUser();
-    }
 }

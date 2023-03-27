@@ -51,12 +51,15 @@ public class GameService {
         }
     }
 
+
     public List<LibGame> getGameList(Integer user_id){
         List<LibGame> N = gameMapper.getGameList(user_id);
         return N;
     }
 
+
     public List<Game> searchgame(String gamename){
         return gameMapper.searchgame(gamename);
     }
+
 }
