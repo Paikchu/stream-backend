@@ -65,8 +65,9 @@ DROP TABLE IF EXISTS `Comment`;
 CREATE TABLE Comment
 (
     com_id INT PRIMARY KEY AUTO_INCREMENT,
+    com_gid INT,
     com_content VARCHAR(256) NOT NULL,
-    com_data    DATE NOT NULL
+    com_date    DATE NOT NULL
 );
 
 CREATE TABLE Library
