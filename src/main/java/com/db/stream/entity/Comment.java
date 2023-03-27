@@ -1,6 +1,7 @@
 package com.db.stream.entity;
+import java.util.Date;
 
-public class Comment {
+/*public class Comment {
     private Integer comm_id;
     private Integer g_id;
     private Integer u_id;
@@ -40,4 +41,25 @@ public class Comment {
 
     public void set_rate(Double rate){ this.comm_rate = rate;};
 
+}*/
+public class Comment {
+    private Integer com_id;
+    private String com_content;
+    private Date com_data;
+
+    public Comment(Integer com_id,String com_content,Date com_data) {
+        this.com_id = com_id;
+        this.com_content = com_content;
+        this.com_data = com_data;
+    }
+    public Integer getcom_id() {
+        return com_id;
+    }
+    public String get_comm() {
+        return com_content;
+    }
+    public Date getcom_data(){ return com_data;}
+    public void setcom_id(Integer com_id){ this.com_id = com_id;};
+    public void setcom_content(String com_content){ this.com_content = com_content;};
+    public void setcom_data(Date com_data){ this.com_data = com_data;};
 }

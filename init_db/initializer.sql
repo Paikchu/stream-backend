@@ -1,14 +1,12 @@
 # CREATE DATABASE stream;
 USE stream;
-
+DROP TABLE IF EXISTS `Game_Description`;
+DROP TABLE IF EXISTS `Transaction`;
+DROP TABLE IF EXISTS `Game`;
 DROP TABLE IF EXISTS `Cart`;
-DROP TABLE IF EXISTS `Manager`;
-DROP TABLE IF EXISTS `Comment`;
 DROP TABLE IF EXISTS `Library`;
 DROP TABLE IF EXISTS `Order`;
-DROP TABLE IF EXISTS `Game`;
-DROP TABLE IF EXISTS `Company`;
-DROP TABLE IF EXISTS `User`;
+DROP TABLE IF EXISTS `Game_Description`;
 
 
 DROP TABLE IF EXISTS `Company`;
@@ -42,7 +40,6 @@ CREATE TABLE Manager
     m_pd   VARCHAR(50) NOT NULL
 );
 
-DROP TABLE IF EXISTS `Game`;
 CREATE TABLE Game
 (
     g_id           INT primary key AUTO_INCREMENT,
@@ -72,7 +69,6 @@ CREATE TABLE Comment
     com_data    DATE NOT NULL
 );
 
-DROP TABLE IF EXISTS `Library`;
 CREATE TABLE Library
 (
     lib_uid INT,
@@ -81,7 +77,6 @@ CREATE TABLE Library
     FOREIGN KEY (lib_gid) REFERENCES Game (g_id)
 );
 
-DROP TABLE IF EXISTS `Order`;
 CREATE TABLE `Order`
 (
     o_id    INT primary key AUTO_INCREMENT,
@@ -92,6 +87,18 @@ CREATE TABLE `Order`
     FOREIGN KEY (o_gid) REFERENCES Game (g_id),
     FOREIGN KEY (o_uid) REFERENCES User (u_id)
 );
+
+CREATE TABLE Game_Description
+(
+    game_id INT primary key AUTO_INCREMENT,
+    g_OS varchar(50) NOT NULL,
+    g_Processor varchar(50) NOT NULL,
+    g_RAM varchar(50) NOT NULL,
+    g_Memory varchar(50) NOT NULL,
+    g_Network varchar(50) NOT NULL,
+    g_GraphicCard varchar(50) NOT NULL,
+    g_ExtraRequire varchar(50)
+)
 
 
 

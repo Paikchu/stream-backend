@@ -1,13 +1,11 @@
 package com.db.stream.controller;
 import com.db.stream.entity.Game;
 import com.db.stream.entity.Comment;
-import com.db.stream.entity.GameCompany;
+import com.db.stream.entity.Library;
+import com.db.stream.entity.LibGame;
 import com.db.stream.service.GameService;
 import jakarta.annotation.Resource;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +22,9 @@ public class GameController {
     @RequestMapping("/game_show/{game_id}")
     public List<Game> game_show(@PathVariable Integer game_id) { return gameService.getGameInfo(game_id);}
 
+    @RequestMapping("/getGameByUser/{user_id}")
+    public List<LibGame> getGameByUser(@PathVariable Integer user_id) { return gameService.getGameList(user_id);}
+
     @RequestMapping("/comm_show/{game_id}")
     public List<Comment> comm_show(@PathVariable Integer game_id) { return gameService.getGameComm(game_id);}
 
@@ -32,6 +33,9 @@ public class GameController {
 
     @RequestMapping("/numofgames")
     public List<Game> numofgames() { return gameService.getGameNum();}
+
+    @RequestMapping("/getAllComm")
+    public List<Comment> getAllComm() { return gameService.getAllComm();}
 
     @PostMapping("/search_game")
     public List<Game> searched_game(@RequestBody Map<String, String> requestBody){
