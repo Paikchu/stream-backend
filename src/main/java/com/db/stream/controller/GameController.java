@@ -3,6 +3,7 @@ import com.db.stream.entity.Game;
 import com.db.stream.entity.Comment;
 import com.db.stream.entity.Library;
 import com.db.stream.entity.LibGame;
+import com.db.stream.entity.Order;
 import com.db.stream.service.GameService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
@@ -25,11 +26,22 @@ public class GameController {
     @RequestMapping("/getGameByUser/{user_id}")
     public List<LibGame> getGameByUser(@PathVariable Integer user_id) { return gameService.getGameList(user_id);}
 
+    @RequestMapping("/getOrderList/{user_id}")
+    public List<Order> getOrderList(@PathVariable Integer user_id) { return gameService.getOrderList(user_id);}
+
+
     @RequestMapping("/comm_show/{game_id}")
     public List<Comment> comm_show(@PathVariable Integer game_id) { return gameService.getGameComm(game_id);}
 
+    @RequestMapping("/delete_order/{oid}")
+    public void delete_order(@PathVariable Integer oid) { gameService.delete_order(oid);}
+    /*@RequestMapping(method = RequestMethod.DELETE, value = "/delete_order/{oid}")
+    public void deleteOrder(@PathVariable Integer oid) {
+        gameService.delete_order(oid);
+    }*/
+
     @RequestMapping("/add_comm")
-    public Integer add_comm(@RequestBody Comment comment) { return gameService.create_new_comm(comment);}
+    public Map<String, Object> add_comm(@RequestBody Comment comment) { return gameService.create_new_comm(comment);}
 
     @RequestMapping("/numofgames")
     public List<Game> numofgames() { return gameService.getGameNum();}

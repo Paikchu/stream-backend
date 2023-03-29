@@ -4,10 +4,12 @@ import com.db.stream.entity.Game;
 import com.db.stream.entity.Comment;
 import com.db.stream.entity.Library;
 import com.db.stream.entity.LibGame;
+import com.db.stream.entity.Order;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Delete;
 
 import java.util.List;
 
@@ -21,9 +23,12 @@ public interface GameMapper {
         //List<Game> getGameInfo();
     List<Game> getGameInfo(@Param("game_id") Integer game_id);
 
-    @Select("SELECT * FROM Comment WHERE g_id = #{game_id}")
+    @Select("SELECT * FROM Comment WHERE com_gid = #{game_id}")
         //List<Game> getGameInfo();
     List<Comment> getGameComm(@Param("game_id") Integer game_id);
+    @Delete("DELETE FROM `Order` WHERE o_id = #{oid}")
+        //List<Game> getGameInfo();
+    List<Order> delete_order(@Param("oid") Integer oid);
 
     @Select("SELECT * FROM Game")
     List<Game> getGameNum();
@@ -31,16 +36,21 @@ public interface GameMapper {
     @Select("SELECT * FROM Comment")
     List<Comment> getAllComm();
 
-    @Insert("INSERT INTO Comment(g_id,u_id,comm_content,comm_rate)" + "VALUE(#{g_id},#{u_id},#{comm_content},#{comm_rate})")
+    @Insert("INSERT INTO Comment(com_gid,com_content,com_date)" + "VALUE(#{com_gid},#{com_content},NOW())")
     Integer create_new_comm(Comment comment);
 
-    @Select("SELECT * FROM Game WHERE g_name = #{g_name}")
+    @Select("SELECT * FROM Game WHERE g_name like '%${g_name}%'")
     List<Game> searchgame(@Param("g_name") String g_name);
 
 
     @Select("SELECT * FROM Library,Game WHERE lib_uid = #{user_id} AND lib_gid = g_id")
         //List<Game> getGameInfo();
     List<LibGame> getGameList(@Param("user_id") Integer user_id);
+
+    @Select("SELECT * FROM `Order` WHERE o_uid = #{user_id}")
+        //List<Game> getGameInfo();
+    List<Order> getOrderList(@Param("user_id") Integer user_id);
+
 
 //    @Select("SELECT g.g_id, g.g_name FROM Game as g JOIN Library as L on g.g_id = L.g_id JOIN User U on U.u_id = L.u_id WHERE U.u_id == #{u_id}")
 //    List<Game> selectUserGameByUserId(@Param("u_id")Integer u_id);
