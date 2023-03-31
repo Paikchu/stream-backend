@@ -3,10 +3,12 @@ import com.db.stream.entity.Game;
 import com.db.stream.entity.Comment;
 import com.db.stream.entity.Library;
 import com.db.stream.entity.LibGame;
+import com.db.stream.entity.CartGame;
 import com.db.stream.mapper.GameMapper;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import com.db.stream.entity.Order;
+import com.db.stream.entity.CartGame;
 import java.util.List;
 import java.util.Arrays;
 import java.util.Map;
@@ -19,18 +21,20 @@ public class GameService {
     @Resource
     private GameMapper gameMapper;
 
-
-
     public List<String> getAllGame() {
         return gameMapper.selectAllGameNames();
     }
 
     public List<Game> getGameInfo(Integer game_id){
-        //public JsonData getGameInfo(){
-        //Map<String, Object> resultMap = new HashMap<>();
         List<Game> gameList = gameMapper.getGameInfo(game_id);
         return gameList;
-
+    }
+    public List<Game> getPrices(){
+        List<Game> gameList = gameMapper.getPrices();
+        return gameList;
+    }
+    public Double getGamePrice(Integer game_id){
+        return gameMapper.getGamePrice(game_id);
     }
     public List<Comment> getGameComm(Integer game_id){
         //public JsonData getGameInfo(){
@@ -73,10 +77,31 @@ public class GameService {
         }
     }
 
-
-
     public List<LibGame> getGameList(Integer user_id){
         List<LibGame> N = gameMapper.getGameList(user_id);
+        return N;
+    }
+    public Integer add_lib(Integer lib_uid,Integer lib_gid){
+        return gameMapper.add_lib(lib_uid,lib_gid);
+    }
+    public Integer add_liborder(Order order){
+        return gameMapper.add_liborder(order);
+    }
+
+    public List<CartGame> delete_cart(Integer cart_uid,Integer cart_gid){
+        return gameMapper.delete_cart(cart_uid,cart_gid);
+    }
+    public Integer delete_cartorder(Order order){
+        return gameMapper.delete_cartorder(order);
+    }
+    public Integer cart_purchase(Order order){
+        gameMapper.add_liborder(order);
+        gameMapper.add_order(order);
+        return gameMapper.delete_cartorder(order);
+    }
+
+    public List<CartGame> getCartList(Integer user_id){
+        List<CartGame> N = gameMapper.getCartGame(user_id);
         return N;
     }
 
