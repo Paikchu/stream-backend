@@ -5,6 +5,8 @@ import com.db.stream.entity.Comment;
 import com.db.stream.entity.LibGame;
 import com.db.stream.entity.Order;
 import com.db.stream.entity.CartGame;
+import com.db.stream.entity.CompanyGame;
+import com.db.stream.entity.GameDescription;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -19,8 +21,10 @@ public interface GameMapper {
     @Select("SELECT g_name, g_id, g_tag, g_intro FROM game")
     List<String> selectAllGameNames();
 
-    @Select("SELECT * FROM Game WHERE g_id = #{game_id}")
-    List<Game> getGameInfo(@Param("game_id") Integer game_id);
+    @Select("SELECT * FROM Game,Company,Game_Description WHERE g_id = #{game_id} AND g_cid = c_id AND game_id=g_id")
+    List<CompanyGame> getGameInfo(@Param("game_id") Integer game_id);
+    @Select("SELECT * FROM Game_Description WHERE game_id = #{game_id}")
+    List<GameDescription> getGameDescription(@Param("game_id") Integer game_id);
     @Select("SELECT * FROM Game")
     List<Game> getPrices();
 

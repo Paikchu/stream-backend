@@ -5,6 +5,8 @@ import com.db.stream.entity.Library;
 import com.db.stream.entity.LibGame;
 import com.db.stream.entity.Order;
 import com.db.stream.entity.CartGame;
+import com.db.stream.entity.CompanyGame;
+import com.db.stream.entity.GameDescription;
 import com.db.stream.service.GameService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +24,10 @@ public class GameController {
         return gameService.getAllGame();
     }
     @RequestMapping("/game_show/{game_id}")
-    public List<Game> game_show(@PathVariable Integer game_id) { return gameService.getGameInfo(game_id);}
+    public List<CompanyGame> game_show(@PathVariable Integer game_id) { return gameService.getGameInfo(game_id);}
+
+    @RequestMapping("/game_description/{game_id}")
+    public List<GameDescription> game_description(@PathVariable Integer game_id) { return gameService.getGameDescription(game_id);}
     @RequestMapping("/getPrices")
     public List<Game> getPrices() { return gameService.getPrices();}
     @RequestMapping("/getGamePrice/{game_id}")

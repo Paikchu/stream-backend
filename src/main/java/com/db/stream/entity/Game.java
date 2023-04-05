@@ -1,5 +1,4 @@
 package com.db.stream.entity;
-
 import java.io.Serializable;
 import java.util.Date;
 

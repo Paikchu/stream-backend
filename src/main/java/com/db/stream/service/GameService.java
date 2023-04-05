@@ -4,7 +4,9 @@ import com.db.stream.entity.Comment;
 import com.db.stream.entity.Library;
 import com.db.stream.entity.LibGame;
 import com.db.stream.entity.CartGame;
+import com.db.stream.entity.CompanyGame;
 import com.db.stream.mapper.GameMapper;
+import com.db.stream.entity.GameDescription;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import com.db.stream.entity.Order;
@@ -25,8 +27,8 @@ public class GameService {
         return gameMapper.selectAllGameNames();
     }
 
-    public List<Game> getGameInfo(Integer game_id){
-        List<Game> gameList = gameMapper.getGameInfo(game_id);
+    public List<CompanyGame> getGameInfo(Integer game_id){
+        List<CompanyGame> gameList = gameMapper.getGameInfo(game_id);
         return gameList;
     }
     public List<Game> getPrices(){
@@ -37,10 +39,12 @@ public class GameService {
         return gameMapper.getGamePrice(game_id);
     }
     public List<Comment> getGameComm(Integer game_id){
-        //public JsonData getGameInfo(){
-        //Map<String, Object> resultMap = new HashMap<>();
         List<Comment> commList = gameMapper.getGameComm(game_id);
         return commList;
+    }
+    public List<GameDescription> getGameDescription(Integer game_id){
+        List<GameDescription> description = gameMapper.getGameDescription(game_id);
+        return description;
     }
 
     public void delete_order(Integer oid){
