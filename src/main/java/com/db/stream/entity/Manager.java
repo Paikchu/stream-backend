@@ -4,14 +4,14 @@ public class Manager {
     private Integer m_id;
     private String m_name;
     private String m_email;
-    private String m_pwd;
+    private String m_pd;
 
 
-    public Manager(Integer m_id, String m_name, String m_email, String m_pwd) {
+    public Manager(Integer m_id, String m_name, String m_email, String m_pd) {
         this.m_id = m_id;
         this.m_name = m_name;
         this.m_email = m_email;
-        this.m_pwd = m_pwd;
+        this.m_pd = m_pd;
     }
 
     public Manager() {
@@ -41,11 +41,11 @@ public class Manager {
         this.m_email = m_email;
     }
 
-    public String getM_pwd() {
-        return m_pwd;
+    public String getM_pd() {
+        return m_pd;
     }
 
-    public void setM_pwd(String m_pwd) {
-        this.m_pwd = m_pwd;
+    public void setM_pwd(String m_pd) {
+        this.m_pd = m_pd;
     }
 }
