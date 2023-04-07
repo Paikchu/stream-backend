@@ -9,9 +9,6 @@ public class Game implements Serializable {
     private String g_rlsdate;
     private double g_price;
     private String g_tag;
-    private double income;
-    private Integer g_volume;
-    private double g_income;
     private Integer g_compid;
 
     public Game(Integer g_id, String g_name, String g_intro, String g_rlsdate, double g_price, String g_tag, Integer g_compid) {
@@ -48,18 +45,6 @@ public class Game implements Serializable {
         return g_tag;
     }
 
-    public double getIncome() {
-        return income;
-    }
-
-    public Integer getG_volume() {
-        return g_volume;
-    }
-
-    public double getG_income() {
-        return g_income;
-    }
-
     public Integer getG_compid() {
         return g_compid;
     }
@@ -86,18 +71,6 @@ public class Game implements Serializable {
 
     public void setG_tag(String g_tag) {
         this.g_tag = g_tag;
-    }
-
-    public void setIncome(double income) {
-        this.income = income;
-    }
-
-    public void setG_volume(Integer g_volume) {
-        this.g_volume = g_volume;
-    }
-
-    public void setG_income(double g_income) {
-        this.g_income = g_income;
     }
 
     public void setG_compid(Integer g_compid) {
