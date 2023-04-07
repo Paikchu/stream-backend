@@ -3,10 +3,7 @@ package com.db.stream.mapper;
 import com.db.stream.entity.Company;
 import com.db.stream.entity.Manager;
 import com.db.stream.entity.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -19,18 +16,18 @@ public interface UserMapper {
     Integer createUserAccount(User user);
 
 
-    @Select("SELECT com_name, com_email, com_pwd, com_permission FROM Company WHERE com_email = #{email}")
+    @Select("SELECT c_name, c_email, c_pd, c_permission FROM Company WHERE c_email = #{email}")
     List<Company> selectComByEmail(@Param("email") String email);
 
 
-    @Insert("INSERT INTO Company(com_name, com_email, com_pwd)" + "VALUE(#{com_name}, #{com_email}, #{com_pwd})")
+    @Insert("INSERT INTO Company(c_name, c_email, c_pd)" + "VALUE(#{c_name}, #{c_email}, #{c_pd})")
     Integer createComAccount(Company company);
 
 
     @Select("SELECT m_name, m_email, m_pwd FROM Manager WHERE m_email = #{email}")
     List<Manager> selectManagerByEmail(@Param("email") String email);
 
-
     @Insert("INSERT INTO Manager(m_name, m_email, m_pwd)" + "VALUE(#{m_name}, #{m_email}, #{m_pwd})")
     Integer createManagerAccount(Manager manager);
+
 }

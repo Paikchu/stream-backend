@@ -32,7 +32,7 @@ public class UserService {
             return result(400, "User does not exist");
         }
         User user1 = userList.get(0);
-        if (user1.getU_pwd().equals(user.getU_pwd())) {
+        if (user1.getU_pd().equals(user.getU_pd())) {
             if (user1.getU_permission().equals(0)) {
                 return result(400, "Access denied");
             } else {
@@ -72,13 +72,13 @@ public class UserService {
      */
     public Map<String, Object> loginComAccount(Company company) {
         Map<String, Object> resultMap = new HashMap<>();
-        List<Company> companyList = userMapper.selectComByEmail(company.getCom_email());
+        List<Company> companyList = userMapper.selectComByEmail(company.getC_email());
         if (companyList == null || companyList.size() != 1) {
             return result(400, "User does not exist");
         }
         Company company1 = companyList.get(0);
-        if (company1.getCom_pwd().equals(company.getCom_pwd())) {
-            if (company1.getCom_permission().equals(0)) {
+        if (company1.getC_pd().equals(company.getC_pd())) {
+            if (company1.getC_permission().equals(0)) {
                 return result(400, "Access denied");
             } else {
                 return result(200, "Success");
@@ -95,7 +95,7 @@ public class UserService {
      * @return {code, message}
      */
     public Map<String, Object> createComAccount(Company company) {
-        List<Company> companyList = userMapper.selectComByEmail(company.getCom_email());
+        List<Company> companyList = userMapper.selectComByEmail(company.getC_email());
         if (!companyList.isEmpty()) {
             return result(400, "User have already existed");
         } else {
@@ -143,4 +143,8 @@ public class UserService {
             }
         }
     }
+
+
+
+
 }

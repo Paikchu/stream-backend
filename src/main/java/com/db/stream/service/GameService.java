@@ -20,10 +20,6 @@ public class GameService {
         return gameMapper.selectAllGameNames();
     }
 
-    public List<Game> getAllGames() {
-        return gameMapper.selectAllGames();
-    }
-
     public List<Game> getGameInfo(Integer game_id){
         //public JsonData getGameInfo(){
         //Map<String, Object> resultMap = new HashMap<>();
