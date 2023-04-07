@@ -27,6 +27,10 @@ public class GameService {
         return gameMapper.selectAllGameNames();
     }
 
+    public List<Game> getAllGames() {
+        return gameMapper.selectAllGames();
+    }
+
     public List<CompanyGame> getGameInfo(Integer game_id){
         List<CompanyGame> gameList = gameMapper.getGameInfo(game_id);
         return gameList;

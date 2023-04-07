@@ -21,6 +21,9 @@ public interface GameMapper {
     @Select("SELECT g_name, g_id, g_tag, g_intro FROM game")
     List<String> selectAllGameNames();
 
+    @Select("SELECT g_id, g_name, g_intro, g_release_date, g_price, g_tag, g_cid FROM game")
+    List<Game> selectAllGames();
+
     @Select("SELECT * FROM Game,Company,Game_Description WHERE g_id = #{game_id} AND g_cid = c_id AND game_id=g_id")
     List<CompanyGame> getGameInfo(@Param("game_id") Integer game_id);
     @Select("SELECT * FROM Game_Description WHERE game_id = #{game_id}")
