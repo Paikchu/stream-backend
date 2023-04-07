@@ -9,10 +9,10 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper {
-    @Select("SELECT u_name, u_email, u_pwd, u_permission FROM User WHERE u_email = #{email}")
+    @Select("SELECT u_name, u_email, u_pd, u_permission FROM User WHERE u_email = #{email}")
     List<User> selectUserByEmail(@Param("email") String email);
 
-    @Insert("INSERT INTO User(u_name, u_email, u_pwd)" + "VALUE(#{u_name}, #{u_email}, #{u_pwd})")
+    @Insert("INSERT INTO User(u_name, u_email, u_pd)" + "VALUE(#{u_name}, #{u_email}, #{u_pd})")
     Integer createUserAccount(User user);
 
 
@@ -24,10 +24,10 @@ public interface UserMapper {
     Integer createComAccount(Company company);
 
 
-    @Select("SELECT m_name, m_email, m_pwd FROM Manager WHERE m_email = #{email}")
+    @Select("SELECT m_name, m_email, m_pd FROM Manager WHERE m_email = #{email}")
     List<Manager> selectManagerByEmail(@Param("email") String email);
 
-    @Insert("INSERT INTO Manager(m_name, m_email, m_pwd)" + "VALUE(#{m_name}, #{m_email}, #{m_pwd})")
+    @Insert("INSERT INTO Manager(m_name, m_email, m_pd)" + "VALUE(#{m_name}, #{m_email}, #{m_pd})")
     Integer createManagerAccount(Manager manager);
 
 }

@@ -119,7 +119,7 @@ public class UserService {
             return result(400, "User does not exist");
         }
         Manager manager1 = managerList.get(0);
-        if (manager1.getM_pwd().equals(manager.getM_pwd())) {
+        if (manager1.getM_pd().equals(manager.getM_pd())) {
             return result(300, "Success");
         } else {
             return result(400, "Wrong email/password");
