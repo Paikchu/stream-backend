@@ -13,11 +13,17 @@ public class GameController {
     @Resource
     private GameService gameService;
 
-    @GetMapping ("/home")
-    public List<String> showHomepage(){
-        System.out.println("get all game name, proceeding...\n");
+    @GetMapping ("/home1")
+    public List<String> showHomepage1(){
         return gameService.getAllGame();
     }
+
+    @GetMapping ("/home")
+    public List<Game> showHomepage(){
+        System.out.println("get all games, proceeding...\n");
+        return gameService.getAllGames();
+    }
+
     @RequestMapping("/game_show/{game_id}")
     public List<Game> game_show(@PathVariable Integer game_id) { return gameService.getGameInfo(game_id);}
 

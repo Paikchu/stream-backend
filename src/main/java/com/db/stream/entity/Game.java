@@ -14,16 +14,13 @@ public class Game implements Serializable {
     private double g_income;
     private Integer g_compid;
 
-    public Game(Integer g_id, String g_name, String g_intro, String g_rlsdate, double g_price, String g_tag, double income, Integer g_volume, double g_income, Integer g_compid) {
+    public Game(Integer g_id, String g_name, String g_intro, String g_rlsdate, double g_price, String g_tag, Integer g_compid) {
         this.g_id = g_id;
         this.g_name = g_name;
         this.g_intro = g_intro;
         this.g_rlsdate = g_rlsdate;
         this.g_price = g_price;
         this.g_tag = g_tag;
-        this.income = income;
-        this.g_volume = g_volume;
-        this.g_income = g_income;
         this.g_compid = g_compid;
     }
 

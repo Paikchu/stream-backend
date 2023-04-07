@@ -12,8 +12,11 @@ import java.util.List;
 
 @Mapper
 public interface GameMapper {
-    @Select("SELECT g_name, g_id, g_tag, g_intro FROM game")
+    @Select("SELECT g_name, g_id, g_tag, g_intro FROM Game")
     List<String> selectAllGameNames();
+
+    @Select("SELECT g_id, g_name, g_intro, g_release_date, g_price, g_tag, g_cid FROM Game")
+    List<Game> selectAllGames();
 
     @Select("SELECT * FROM Game WHERE g_id = #{game_id}")
         //List<Game> getGameInfo();

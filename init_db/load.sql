@@ -51,6 +51,14 @@ INSERT INTO Game VALUES (8, "Cities: Skylines", "Cities: Skylines is a modern ta
 INSERT INTO Game VALUES (9, "Call of Duty: Modern Warfare II", "Call of Duty: Modern Warfare II drops players into an unprecedented global conflict that features the return of the iconic Operators of Task Force 141.", str_to_date("2022-10-28", "%Y-%m-%d"), 59.99, 'FPS', 1);
 INSERT INTO Game VALUES (10, "Apex Legends", "Apex Legends is the award-winning, free-to-play Hero Shooter from Respawn Entertainment. Master an ever-growing roster of legendary characters with powerful abilities, and experience strategic squad play and innovative gameplay in the next evolution of Hero Shooter and Battle Royale.", str_to_date("2020-11-04", "%Y-%m-%d"), 29.99, 'FPS', 1);
 
+INSERT INTO User VALUES ('7', 'piakchu', 'yzh7@gmail.com', '123456', 0);
+INSERT INTO User VALUES ('2', 'piakchu', 'yzh2@gmail.com', '123456', 0);
+INSERT INTO User VALUES ('3', 'piakchu', 'yzh3@gmail.com', '123456', 0);
+INSERT INTO User VALUES ('4', 'eevee', 'yzh4@gmail.com', '123456', 0);
+INSERT INTO User VALUES ('5', 'eevee', 'yzh5@gmail.com', '123456', 0);
+INSERT INTO User VALUES ('6', 'eevee', 'yzh6@gmail.com', '123456', 0);
+INSERT INTO User VALUES ('9', 'eevee', 'yzh9@gmail.com', '123456', 0);
+
 INSERT INTO `Order` VALUES (1, 2, 2, 50.2, str_to_date("2016-04-11", "%Y-%m-%d"));
 INSERT INTO `Order` VALUES (2, 7, 3, 50.2, str_to_date("2016-04-11", "%Y-%m-%d"));
 INSERT INTO `Order` VALUES (3, 6, 4, 50.2, str_to_date("2016-04-11", "%Y-%m-%d"));
@@ -68,10 +76,23 @@ INSERT INTO `Order` VALUES (15, 8, 2, 50.2, str_to_date("2016-04-11", "%Y-%m-%d"
 INSERT INTO `Order` VALUES (16, 9, 2, 50.2, str_to_date("2016-04-11", "%Y-%m-%d"));
 INSERT INTO `Order` VALUES (17, 10, 2, 50.2, str_to_date("2016-04-11", "%Y-%m-%d"));
 
-INSERT INTO User VALUES ('7', 'piakchu', 'yzh7@gmail.com', '123456', 0);
-INSERT INTO User VALUES ('2', 'piakchu', 'yzh2@gmail.com', '123456', 0);
-INSERT INTO User VALUES ('3', 'piakchu', 'yzh3@gmail.com', '123456', 0);
-INSERT INTO User VALUES ('4', 'piakchu', 'yzh4@gmail.com', '123456', 0);
-INSERT INTO User VALUES ('5', 'piakchu', 'yzh5@gmail.com', '123456', 0);
-INSERT INTO User VALUES ('6', 'piakchu', 'yzh6@gmail.com', '123456', 0);
-INSERT INTO User VALUES ('9', 'eevee', 'yzh9@gmail.com', '123456', 0);
+INSERT INTO Library VALUES(2,1);
+INSERT INTO Library VALUES(2,2);
+INSERT INTO Library VALUES(2,3);
+INSERT INTO Library VALUES(2,4);
+INSERT INTO Library VALUES(2,5);
+INSERT INTO Library VALUES(2,6);
+INSERT INTO Library VALUES(7,7);
+INSERT INTO Library VALUES(2,8);
+INSERT INTO Library VALUES(2,9);
+INSERT INTO Library VALUES(2,10);
+INSERT INTO Library VALUES(3,1);
+INSERT INTO Library VALUES(5,2);
+INSERT INTO Library VALUES(7,3);
+INSERT INTO Library VALUES(5,4);
+INSERT INTO Library VALUES(9,5);
+INSERT INTO Library VALUES(3,6);
+INSERT INTO Library VALUES(7,7);
+INSERT INTO Library VALUES(5,8);
+INSERT INTO Library VALUES(9,9);
+INSERT INTO Library VALUES(9,10);
