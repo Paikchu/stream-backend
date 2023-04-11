@@ -1,4 +1,4 @@
-INSERT INTO `Order` VALUES (1, 2, 2, 50.2, str_to_date("2016-04-11", "%Y-%m-%d"));
+INSERT INTO `Order` VALUES (1, 2, 2, 50.2, str_to_date("2016-04-11"));
 INSERT INTO `Order` VALUES (2, 7, 3, 50.2, str_to_date("2016-04-11", "%Y-%m-%d"));
 INSERT INTO `Order` VALUES (3, 6, 4, 50.2, str_to_date("2016-04-11", "%Y-%m-%d"));
 INSERT INTO `Order` VALUES (9, 5, 5, 50.2, str_to_date("2016-04-11", "%Y-%m-%d"));

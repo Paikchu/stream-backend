@@ -68,7 +68,7 @@ public interface GameMapper {
     @Insert("INSERT INTO `Order`(o_gid,o_uid,o_value,o_time) VALUE(#{o_gid},#{o_uid},#{o_value},NOW())")
     Integer add_order(Order order);
 
-    @Select("SELECT * FROM `Order` WHERE o_uid = #{user_id}")
+    @Select("SELECT * FROM `Order`,Game WHERE o_uid = #{user_id} AND o_gid = g_id")
     List<Order> getOrderList(@Param("user_id") Integer user_id);
 
     @Select("SELECT * FROM Cart,Game WHERE cart_uid = #{user_id} AND cart_gid = g_id")
