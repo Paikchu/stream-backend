@@ -9,7 +9,7 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper {
-    @Select("SELECT u_name, u_email, u_pd, u_permission FROM User WHERE u_email = #{email}")
+    @Select("SELECT u_id, u_name, u_email, u_pd, u_permission FROM User WHERE u_email = #{email}")
     List<User> selectUserByEmail(@Param("email") String email);
 
     @Insert("INSERT INTO User(u_name, u_email, u_pd)" + "VALUE(#{u_name}, #{u_email}, #{u_pd})")

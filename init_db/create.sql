@@ -2,12 +2,12 @@
 # USE stream;
 DROP TABLE IF EXISTS `Game_Description`;
 DROP TABLE IF EXISTS `Transaction`;
-DROP TABLE IF EXISTS `Game`;
+
 DROP TABLE IF EXISTS `Cart`;
 DROP TABLE IF EXISTS `Library`;
 DROP TABLE IF EXISTS `Order`;
 DROP TABLE IF EXISTS `Game_Description`;
-
+DROP TABLE IF EXISTS `Game`;
 
 DROP TABLE IF EXISTS `Company`;
 CREATE TABLE Company
@@ -65,7 +65,6 @@ DROP TABLE IF EXISTS `Comment`;
 CREATE TABLE Comment
 (
     com_id INT PRIMARY KEY AUTO_INCREMENT,
-    com_uid INT,
     com_gid INT,
     com_content VARCHAR(256) NOT NULL,
     com_date    DATE NOT NULL
