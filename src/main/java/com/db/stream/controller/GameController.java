@@ -48,6 +48,9 @@ public class GameController {
     @RequestMapping("/add_lib_by_email/{email}/{lib_gid}")
     public Integer add_lib_by_email(@PathVariable String email,@PathVariable Integer lib_gid) { return gameService.add_lib_by_email(email,lib_gid);}
 
+    @RequestMapping("/quick_order/{email}/{lib_gid}")
+    public Integer quick_order(@PathVariable String email,@PathVariable Integer lib_gid) { return gameService.quick_order(email,lib_gid);}
+
     @RequestMapping("/add_cart_by_email/{email}/{lib_gid}")
     public Integer add_cart_by_email(@PathVariable String email,@PathVariable Integer lib_gid) { return gameService.add_cart_by_email(email,lib_gid);}
 

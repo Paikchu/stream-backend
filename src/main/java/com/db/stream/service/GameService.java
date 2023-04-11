@@ -101,6 +101,8 @@ public class GameService {
         return gameMapper.add_cart_by_email(email,lib_gid);
     }
 
+    public Integer quick_order(String email, Integer g_id){return gameMapper.quick_order(email, g_id); }
+
     public Integer add_liborder(Order order){
         return gameMapper.add_liborder(order);
     }

@@ -21,7 +21,7 @@ public interface GameMapper {
     @Select("SELECT g_name, g_id, g_tag, g_intro FROM game")
     List<String> selectAllGameNames();
 
-    @Select("SELECT * FROM Game WHERE g_id NOT IN (SELECT DISTINCT cart_gid FROM Cart)")
+    @Select("SELECT * FROM Game")
     List<Game> selectAllGames();
 
     @Select("SELECT * FROM Game,Company,Game_Description WHERE g_id = #{game_id} AND g_cid = c_id AND game_id=g_id")
@@ -72,6 +72,9 @@ public interface GameMapper {
     Integer add_liborder(Order order);
     @Insert("INSERT INTO `Order`(o_gid,o_uid,o_value,o_time) VALUE(#{o_gid},#{o_uid},#{o_value},NOW())")
     Integer add_order(Order order);
+
+    @Insert("INSERT INTO `Order`(o_gid,o_uid,o_value,o_time) VALUE(#{g_id},(SELECT u_id FROM User WHERE u_email = #{email}),(SELECT g_price FROM Game WHERE g_id = #{g_id}),NOW())")
+    Integer quick_order(@Param("email") String email, @Param("g_id") Integer lib_uid);
 
     @Select("SELECT * FROM `Order`,Game WHERE o_uid = #{user_id} AND o_gid = g_id")
     List<Order> getOrderList(@Param("user_id") Integer user_id);
