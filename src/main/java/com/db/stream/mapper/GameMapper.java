@@ -63,7 +63,6 @@ public interface GameMapper {
     @Select("SELECT * FROM Game WHERE g_name like '%${g_name}%'")
     List<Game> searchgame(@Param("g_name") String g_name);
 
-
     @Select("SELECT * FROM Library,Game WHERE lib_uid = #{user_id} AND lib_gid = g_id")
     List<LibGame> getGameList(@Param("user_id") Integer user_id);
     @Insert("INSERT INTO Library(lib_uid,lib_gid) VALUE(#{lib_uid},#{lib_gid})")
@@ -80,6 +79,11 @@ public interface GameMapper {
     @Select("SELECT DISTINCT * FROM Cart,Game WHERE cart_uid = #{user_id} AND cart_gid = g_id")
     List<CartGame> getCartGame(@Param("user_id") Integer user_id);
 
+    @Insert("INSERT INTO Library(lib_uid,lib_gid) VALUE((SELECT u_id FROM User WHERE u_email = #{email}),#{lib_gid})")
+    Integer add_lib_by_email(@Param("email") String email, @Param("lib_gid") Integer lib_gid);
+
+    @Insert("INSERT INTO Cart(cart_uid,cart_gid) VALUE((SELECT u_id FROM User WHERE u_email = #{email}),#{lib_gid})")
+    Integer add_cart_by_email(@Param("email") String email, @Param("lib_gid") Integer lib_gid);
 
 
 //    @Select("SELECT g.g_id, g.g_name FROM Game as g JOIN Library as L on g.g_id = L.g_id JOIN User U on U.u_id = L.u_id WHERE U.u_id == #{u_id}")

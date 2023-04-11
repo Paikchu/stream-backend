@@ -92,6 +92,15 @@ public class GameService {
     public Integer add_lib(Integer lib_uid,Integer lib_gid){
         return gameMapper.add_lib(lib_uid,lib_gid);
     }
+
+    public Integer add_lib_by_email(String email,Integer lib_gid){
+        return gameMapper.add_lib_by_email(email,lib_gid);
+    }
+
+    public Integer add_cart_by_email(String email,Integer lib_gid){
+        return gameMapper.add_cart_by_email(email,lib_gid);
+    }
+
     public Integer add_liborder(Order order){
         return gameMapper.add_liborder(order);
     }

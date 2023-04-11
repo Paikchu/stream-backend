@@ -9,6 +9,8 @@ import com.db.stream.entity.CompanyGame;
 import com.db.stream.entity.GameDescription;
 import com.db.stream.service.GameService;
 import jakarta.annotation.Resource;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
@@ -39,8 +41,16 @@ public class GameController {
     public Double getGamePrice(@PathVariable Integer game_id) { return gameService.getGamePrice(game_id);}
     @RequestMapping("/getGameByUser/{user_id}")
     public List<LibGame> getGameByUser(@PathVariable Integer user_id) { return gameService.getGameList(user_id);}
+
     @RequestMapping("/add_lib/{lib_uid}/{lib_gid}")
     public Integer add_lib(@PathVariable Integer lib_uid,@PathVariable Integer lib_gid) { return gameService.add_lib(lib_uid,lib_gid);}
+
+    @RequestMapping("/add_lib_by_email/{email}/{lib_gid}")
+    public Integer add_lib_by_email(@PathVariable String email,@PathVariable Integer lib_gid) { return gameService.add_lib_by_email(email,lib_gid);}
+
+    @RequestMapping("/add_cart_by_email/{email}/{lib_gid}")
+    public Integer add_cart_by_email(@PathVariable String email,@PathVariable Integer lib_gid) { return gameService.add_cart_by_email(email,lib_gid);}
+
     @RequestMapping("/add_liborder")
     public Integer add_liborder(Order order) { return gameService.add_liborder(order);}
 
