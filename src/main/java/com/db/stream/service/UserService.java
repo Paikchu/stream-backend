@@ -33,10 +33,10 @@ public class UserService {
         }
         User user1 = userList.get(0);
         if (user1.getU_pd().equals(user.getU_pd())) {
-            if (user1.getU_permission().equals(0)) {
+            if (user1.getU_permission().equals(1)) {
                 return result(400, "Access denied");
             } else {
-                return result(200, "Success");
+                return result(user1.getU_id(), "Success");
             }
         } else {
             return result(400, "Wrong email/password");
@@ -55,8 +55,9 @@ public class UserService {
             return result(400, "User have already existed");
         } else {
             Integer addUser = userMapper.createUserAccount(user);
-            if (addUser > 0) {
-                return result(200, "Success");
+            List<User> newUser = userMapper.selectUserByEmail(user.getU_email());
+            if (addUser > 0 && !newUser.isEmpty()) {
+                return result(newUser.get(0).getU_id(), "Success");
             } else {
                 return result(400, "Create failed");
             }
