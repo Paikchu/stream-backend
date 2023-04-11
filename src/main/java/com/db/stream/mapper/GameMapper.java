@@ -21,7 +21,7 @@ public interface GameMapper {
     @Select("SELECT g_name, g_id, g_tag, g_intro FROM game")
     List<String> selectAllGameNames();
 
-    @Select("SELECT g_id, g_name, g_intro, g_release_date, g_price, g_tag, g_cid FROM game")
+    @Select("SELECT * FROM Game WHERE g_id NOT IN (SELECT DISTINCT cart_gid FROM Cart)")
     List<Game> selectAllGames();
 
     @Select("SELECT * FROM Game,Company,Game_Description WHERE g_id = #{game_id} AND g_cid = c_id AND game_id=g_id")
@@ -42,8 +42,14 @@ public interface GameMapper {
     @Delete("DELETE FROM Cart WHERE cart_uid = #{cart_uid} AND cart_gid = #{cart_gid}")
         //List<Game> getGameInfo();
     List<CartGame> delete_cart(@Param("cart_uid") Integer cart_uid, @Param("cart_gid") Integer cart_gid);
+
+    @Insert("INSERT INTO Cart Value(#{cart_uid},#{cart_gid})")
+        //List<Game> getGameInfo();
+    List<CartGame> add_cart(@Param("cart_uid") Integer cart_uid, @Param("cart_gid") Integer cart_gid);
+
     @Delete("DELETE FROM Cart WHERE cart_uid = #{o_uid} AND cart_gid = #{o_gid}")
     Integer delete_cartorder(Order order);
+
 
     @Select("SELECT * FROM Game")
     List<Game> getGameNum();
@@ -71,7 +77,7 @@ public interface GameMapper {
     @Select("SELECT * FROM `Order`,Game WHERE o_uid = #{user_id} AND o_gid = g_id")
     List<Order> getOrderList(@Param("user_id") Integer user_id);
 
-    @Select("SELECT * FROM Cart,Game WHERE cart_uid = #{user_id} AND cart_gid = g_id")
+    @Select("SELECT DISTINCT * FROM Cart,Game WHERE cart_uid = #{user_id} AND cart_gid = g_id")
     List<CartGame> getCartGame(@Param("user_id") Integer user_id);
 
 
