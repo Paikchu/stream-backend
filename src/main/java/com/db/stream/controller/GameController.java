@@ -27,7 +27,6 @@ public class GameController {
 
     @GetMapping ("/home")
     public List<Game> showHomepage(){
-        System.out.println("get all games, proceeding...\n");
         return gameService.getAllGames();
     }
 
@@ -70,6 +69,8 @@ public class GameController {
 
     @RequestMapping("/delete_cart/{cart_uid}/{cart_gid}")
     public void delete_cart(@PathVariable Integer cart_uid,@PathVariable Integer cart_gid) { gameService.delete_cart(cart_uid,cart_gid);}
+    @RequestMapping("/add_cart/{cart_uid}/{cart_gid}")
+    public void add_cart(@PathVariable Integer cart_uid,@PathVariable Integer cart_gid) { gameService.add_cart(cart_uid,cart_gid);}
     @RequestMapping("/delete_cartorder")
     public void delete_cartorder(Order order) { gameService.delete_cartorder(order);}
     @RequestMapping("/cart_purchase")

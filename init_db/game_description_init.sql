@@ -1,14 +1,3 @@
-INSERT INTO Cart Values(2,1);
-INSERT INTO Cart Values(2,2);
-INSERT INTO Cart Values(2,3);
-INSERT INTO Cart Values(2,4);
-INSERT INTO Cart Values(2,5);
-INSERT INTO Cart Values(2,6);
-INSERT INTO Cart Values(2,7);
-INSERT INTO Cart Values(2,8);
-INSERT INTO Cart Values(2,9);
-INSERT INTO Cart Values(2,10);
-
 INSERT INTO Game_Description VALUES (1,"Windows 10 64 Bit"," Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs)","8GB","72GB","100% DirectX 10 compatible","NVIDIA GTX 660 2GB / AMD HD7870 2GB","");
 INSERT INTO Game_Description VALUES (2,"Windows® 10 64-bit (ver. 2004 or later)","AMD FX-8350 / Intel® Core™ i5-3330","8GB","100GB","DirectX Version 12","AMD Radeon™ RX 480 / NVIDIA® GeForce® GTX 780","");
 INSERT INTO Game_Description VALUES (3,"Windows 8.1, Windows 10 (64-bit versions only)","Intel Core i5 2400 @ 3.1 GHz/AMD FX 6300 @ 3.8 GHz","8GB","46GB","DirectX Version 10","AMD Radeon R9 290 or NVIDIA GeForce GTX 970","");

@@ -108,6 +108,10 @@ public class GameService {
     public List<CartGame> delete_cart(Integer cart_uid,Integer cart_gid){
         return gameMapper.delete_cart(cart_uid,cart_gid);
     }
+
+    public List<CartGame> add_cart(Integer cart_uid,Integer cart_gid){
+        return gameMapper.add_cart(cart_uid,cart_gid);
+    }
     public Integer delete_cartorder(Order order){
         return gameMapper.delete_cartorder(order);
     }
