@@ -23,12 +23,12 @@ public class GameService {
     @Resource
     private GameMapper gameMapper;
 
-    public List<String> getAllGame() {
+    public List<Game> getAllGame() {
         return gameMapper.selectAllGameNames();
     }
 
-    public List<Game> getAllGames() {
-        return gameMapper.selectAllGames();
+    public List<Game> getAllGames(Integer user_id) {
+        return gameMapper.selectAllGames(user_id);
     }
 
     public List<CompanyGame> getGameInfo(Integer game_id){

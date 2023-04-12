@@ -18,11 +18,11 @@ import java.util.List;
 
 @Mapper
 public interface GameMapper {
-    @Select("SELECT g_name, g_id, g_tag, g_intro FROM game")
-    List<String> selectAllGameNames();
+    @Select("SELECT * FROM Game")
+    List<Game> selectAllGameNames();
 
-    @Select("SELECT * FROM Game WHERE g_id NOT IN (SELECT cart_gid FROM Cart)")
-    List<Game> selectAllGames();
+    @Select("SELECT * FROM Game WHERE g_id NOT IN (SELECT cart_gid FROM Cart WHERE cart_uid = #{user_id}) AND g_id NOT IN (SELECT DISTINCT o_gid FROM `Order` WHERE o_uid = #{user_id})")
+    List<Game> selectAllGames(@Param("user_id") Integer user_id);
 
     @Select("SELECT * FROM Game,Company,Game_Description WHERE g_id = #{game_id} AND g_cid = c_id AND game_id=g_id")
     List<CompanyGame> getGameInfo(@Param("game_id") Integer game_id);
