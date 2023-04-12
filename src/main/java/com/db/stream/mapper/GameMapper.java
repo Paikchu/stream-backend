@@ -21,7 +21,7 @@ public interface GameMapper {
     @Select("SELECT g_name, g_id, g_tag, g_intro FROM game")
     List<String> selectAllGameNames();
 
-    @Select("SELECT * FROM Game")
+    @Select("SELECT * FROM Game WHERE g_id NOT IN (SELECT cart_gid FROM Cart)")
     List<Game> selectAllGames();
 
     @Select("SELECT * FROM Game,Company,Game_Description WHERE g_id = #{game_id} AND g_cid = c_id AND game_id=g_id")
